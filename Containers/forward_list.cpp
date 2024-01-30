@@ -1,6 +1,15 @@
 #include <iostream>
 #include <forward_list>
 
+void printList(std::forward_list<int>& list)
+{
+    for(const int& element : list)
+    {
+        std::cout << element << " ";
+    }
+    std::cout << std::endl;
+}
+
 int main() {
     // (constructor) Construct forward_list object
     std::forward_list<int> myForwardList;
@@ -9,6 +18,7 @@ int main() {
     myForwardList.emplace_front(1);
     myForwardList.emplace_front(2);
     myForwardList.emplace_front(3);
+    printList(myForwardList);
 
     // (begin) Return iterator to beginning
     auto itBegin = myForwardList.begin();
@@ -33,9 +43,11 @@ int main() {
 
     // (emplace_after) Construct and insert element after a specific position
     myForwardList.emplace_after(itBegin, 4);
+    printList(myForwardList);
 
     // (insert_after) Insert elements after a specific position
     myForwardList.insert_after(itBegin, {5, 6, 7});
+    printList(myForwardList);
 
     // (erase_after) Erase elements after a specific position. (Modify itBegin with new position)
     itBegin = myForwardList.erase_after(itBegin);
@@ -70,8 +82,12 @@ int main() {
     // (reverse) Reverse the order of elements
     myForwardList.reverse();
 
+    // printList
+    printList(myForwardList);
+
     // (clear) Clear content
     myForwardList.clear();
+
 
     return 0;
 }
