@@ -4,6 +4,19 @@
 #include <iostream>
 #include <deque>
 
+bool isNegative(int x) 
+{
+    return x < 0;
+}
+
+void printDeque(std::deque<int>& myDeque)
+{
+    for (const auto& element : myDeque) {
+        std::cout << element << " ";
+    }
+    std::cout << std::endl;
+}
+
 int main() {
     // Constructors
     std::deque<int> myDeque;  // Default constructor
@@ -56,15 +69,24 @@ int main() {
 
     // Display final deque
     std::cout << "Final deque elements: ";
-    for (const auto& element : myDeque) {
-        std::cout << element << " ";
-    }
-    std::cout << std::endl;
+    printDeque(myDeque);
+
+    // Append range at the end (same method for insert/prepend range)
+    std::deque<int> newRange = {8, 9, 10};
+    std::cout << "After append range: " << std::endl;
+    myDeque.insert(myDeque.end(), newRange.begin(), newRange.end());
+    printDeque(myDeque);
+
+    //std::remove_if(myDeque.begin(), myDeque.end(), isNegative) std::remove_if to move the elementsto the beginning of the deque
+    //second myDeque, erase to the end of the deque
+    std::cout << "Deque elements: ";
+    myDeque.push_back(-5);
+    printDeque(myDeque);
+    std::cout << "Appended elements: ";
+    myDeque.erase((myDeque.begin(), myDeque.end()), myDeque.end());
 
     return 0;
 }
-
-
 /*
 Notes:
 - Deque allows efficient insertion and deletion at both ends of container
