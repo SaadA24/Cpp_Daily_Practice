@@ -1,0 +1,10 @@
+^D:\PROJECTS\VSCODE\CPP_DAILY_PRACTICE\BUILD\CMAKEFILES\03377A329DD96CE6D02E2ECE6677AECD\GENERATE.STAMP.RULE
+setlocal
+D:\Programs\cmake\cmake-3.28.0-rc5-windows-x86_64\bin\cmake.exe -SD:/Projects/vscode/cpp_daily_practice -BD:/Projects/vscode/cpp_daily_practice/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Projects/vscode/cpp_daily_practice/build/cpp_daily_pratice.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

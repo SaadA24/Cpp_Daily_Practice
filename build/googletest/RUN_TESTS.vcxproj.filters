@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\vscode\cpp_daily_practice\build\CMakeFiles\f7f9a1cff2caa0b7a005b85a0f9dd0f2\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{14A0B835-139D-37A4-A9BF-C1F127525DF1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
