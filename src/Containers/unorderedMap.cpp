@@ -33,7 +33,7 @@ int main ()
     int key5 = 5;
     std::cout << key5 << " " << myUnorderedMap.at(5) << std::endl;
 
-    //contains the code that might throw an exception
+    //Throws an exception if error
     try{ 
         myUnorderedMap.erase(4); 
         std::cout << myUnorderedMap.at(4) << std::endl;
