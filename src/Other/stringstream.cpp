@@ -2,38 +2,40 @@
 #include <sstream>
 #include <string>
 
-int main () {
+int main() {
 
     std::stringstream ss;
 
+    // Concatenating strings and integer
     ss << "Hello";
     ss << " World";
     ss << 1;
 
-    std::string combinedSs = ss.str(); // to retrieve
-    std::cout << combinedSs << std::endl; // Hello World1
+    std::string combinedSs = ss.str(); // Retrieve concatenated string
+    std::cout << "Combined: " << combinedSs << std::endl; // Output: Hello World1
 
-    std::cout << "Combined: " << combinedSs << std::endl; // Hello World1
-
-
-    // string to int
+    // String to int
     std::string stringWithInt = "1234";
     int intFromString;
-    ss.clear();
-    ss >> intFromString; // extract and assign
-    ss.str(stringWithInt);
-    
+    ss.clear(); // Clear any previous state
+    ss.str(stringWithInt); // Set the content of stringstream to 'stringWithInt'
+    ss >> intFromString; // Extract and assign
 
-    std::cout << "Intfromstring: " << intFromString << std::endl; // Hello World1
+    std::cout << "Int from string: " << intFromString << std::endl; // Output: 1234
 
-    // int to string
+    // Int to string
     int number = 123456789;
-    ss.clear();
-    std::string numberAsString = ss.str(number);
-    ss >> numberAsString;
+    std::stringstream ss3;
+    std::string numberAsString = ss3.str(); // Convert stringstream to string
 
-    std::cout << "numtostring: " << numberAsString << std::endl;
-
+    std::cout << "Number to string: " << numberAsString << std::endl; // Output: 123456789
 
     return 0;
 }
+
+/*
+ss >> intFromString; - Extract and assign
+ss3 << number; // Insert the integer
+
+*/
+
